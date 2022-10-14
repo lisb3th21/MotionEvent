@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity implements
         setContentView(R.layout.activity_main);
         getSupportActionBar().hide();
         setContentView(R.layout.activity_main);
-        View myView = findViewById(R.id.squareMain);
+        //View myView = findViewById(R.id.squareMain);
         mDetector = new GestureDetectorCompat(this,this);
 
         mDetector.setOnDoubleTapListener(this);

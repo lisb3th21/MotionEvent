@@ -7,21 +7,54 @@
     tools:context=".MainActivity">
 
 
-    <TextView
-        android:id="@+id/squareMain"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/purple_200"
-        android:gravity="center"
-        android:text="Haz gestos con tu dedo aquí!"
-        android:textSize="30dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-    />
+        android:background="@color/cardview_light_background"
+        android:padding="@dimen/cardview_compat_inset_shadow"
+        tools:layout_editor_absoluteX="60dp"
+        tools:layout_editor_absoluteY="0dp">
 
+        <TextView
+            android:id="@+id/view1"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@color/cardColor2"
+            android:contentDescription="@string/app_name"
+            android:gravity="center"
+            android:text="Doble click"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:id="@+id/view2"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_below="@+id/view1"
+            android:layout_marginTop="0dp"
+            android:background="@color/cardColor1"
+            android:contentDescription="@string/app_name"
+            android:gravity="center"
+            android:text="Un click"
+            android:textSize="30dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/view3"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_below="@+id/view1"
+            android:layout_marginTop="100dp"
+            android:background="@color/cardColor3"
+            android:contentDescription="@string/app_name"
+            android:gravity="center"
+            android:text="Desliza a la izquierda"
+            android:textSize="30dp"
+            android:textStyle="bold" />
+
+
+    </RelativeLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
