@@ -14,7 +14,7 @@ This app records finger movements and change the color of a view according to th
 
 The next *gif* show the performance of the app.
 
-![Capture](gestureDetector.gif)
+<img src="gestureDetector.gif" alt="preview" height="500">
 
 ## Important part of the code 
 
