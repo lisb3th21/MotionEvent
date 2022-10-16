@@ -12,20 +12,19 @@
         android:layout_height="match_parent"
         android:background="@color/cardview_light_background"
         android:padding="@dimen/cardview_compat_inset_shadow"
-        tools:layout_editor_absoluteX="60dp"
+        tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp">
 
         <TextView
             android:id="@+id/view1"
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:background="@color/cardColor2"
+            android:background="@color/cardColor1_defaul"
             android:contentDescription="@string/app_name"
             android:gravity="center"
-            android:text="Doble click"
+            android:text="Swipe left"
             android:textSize="30dp"
-            android:textStyle="bold"
-            />
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/view2"
@@ -33,23 +32,51 @@
             android:layout_height="100dp"
             android:layout_below="@+id/view1"
             android:layout_marginTop="0dp"
-            android:background="@color/cardColor1"
+            android:background="@color/cardColor2_defaul"
             android:contentDescription="@string/app_name"
             android:gravity="center"
-            android:text="Un click"
+            android:text="Swipe rigth"
             android:textSize="30dp"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/view3"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="200dp"
             android:layout_below="@+id/view1"
             android:layout_marginTop="100dp"
-            android:background="@color/cardColor3"
+            android:background="@color/cardColor3_defaul"
             android:contentDescription="@string/app_name"
             android:gravity="center"
-            android:text="Desliza a la izquierda"
+            android:text="Slide down"
+            android:textSize="30dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/view4"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_below="@+id/view1"
+            android:layout_marginTop="300dp"
+            android:background="@color/cardColor4_default"
+            android:contentDescription="@string/app_name"
+            android:gravity="center"
+            android:text="Slide up"
+            android:textSize="30dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/view5"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_below="@+id/view1"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="501dp"
+
+            android:background="@color/cardColor1_defaul"
+            android:contentDescription="@string/app_name"
+            android:gravity="center"
+            android:text="Keep your finger"
             android:textSize="30dp"
             android:textStyle="bold" />
 

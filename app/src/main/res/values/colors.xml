@@ -7,7 +7,14 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="cardColor1">#A773AF</color>
-    <color name="cardColor2">#6DA24F</color>
-    <color name="cardColor3">#B26F42</color>
+    <color name="cardColor1_defaul">#A773AF</color>
+    <color name="cardColor2_defaul">#6DA24F</color>
+    <color name="cardColor3_defaul">#B26F42</color>
+    <color name="cardColor4_default">#dc7d68</color>
+    <color name="cardColor5_default">#c99ec7</color>
+    <color name="cardColor1_hover">#c7fba5</color>
+    <color name="cardColor2_hover">#adf182</color>
+    <color name="cardColor3_hover">#dc7d68</color>
+    <color name="cardColor4_hover">#dc7d68</color>
+    <color name="cardColor5_hover">#98cbba</color>
 </resources>

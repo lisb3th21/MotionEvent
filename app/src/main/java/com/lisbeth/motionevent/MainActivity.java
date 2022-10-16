@@ -2,100 +2,116 @@ package com.lisbeth.motionevent;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GestureDetectorCompat;
-import androidx.core.view.MotionEventCompat;
 
+import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
+
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity implements
-        GestureDetector.OnGestureListener,
-        GestureDetector.OnDoubleTapListener {
+public class MainActivity  extends AppCompatActivity implements GestureDetector.OnGestureListener, GestureDetector.OnDoubleTapListener{
     private static  final String DEBUG_TAG = "Gestures";
     private GestureDetectorCompat mDetector;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        getSupportActionBar().hide();
-        setContentView(R.layout.activity_main);
-        //View myView = findViewById(R.id.squareMain);
-        mDetector = new GestureDetectorCompat(this,this);
 
+        mDetector = new GestureDetectorCompat(this,this);
         mDetector.setOnDoubleTapListener(this);
+
+        getSupportActionBar().hide();
     }
+
 
     @Override
     public boolean onTouchEvent(MotionEvent event){
         if (this.mDetector.onTouchEvent(event)) {
+
             return true;
         }
+
         return super.onTouchEvent(event);
     }
 
     @Override
-    public boolean onDown(MotionEvent event) {
-        Toast.makeText(this, "Scroll abajo", Toast.LENGTH_SHORT).show();
-        return true;
+    public boolean onDown(MotionEvent motionEvent) {
+        return false;
     }
 
     @Override
-    public boolean onFling(MotionEvent event1, MotionEvent event2,
-                           float velocityX, float velocityY) {
-        Toast.makeText(this, "Fling", Toast.LENGTH_SHORT).show();
-        return true;
+    public void onShowPress(MotionEvent motionEvent) {
+
     }
 
     @Override
-    public void onLongPress(MotionEvent event) {
-        Toast.makeText(this, "Aplastar durante rato", Toast.LENGTH_SHORT).show();
+    public boolean onSingleTapUp(MotionEvent motionEvent) {
+        return false;
     }
 
     @Override
     public boolean onScroll(MotionEvent event1, MotionEvent event2, float distanceX,
                             float distanceY) {
-        Toast.makeText(this, "Scroll "+distanceX+" to "+ distanceY, Toast.LENGTH_SHORT).show();
         return true;
     }
 
     @Override
-    public void onShowPress(MotionEvent event) {
-        Toast.makeText(this, "onShowPress ", Toast.LENGTH_SHORT).show();
-
+    public void onLongPress(MotionEvent motionEvent) {
+        View view5 = findViewById(R.id.view5);
+        view5.setBackgroundResource(R.color.cardColor5_hover);
     }
 
     @Override
-    public boolean onSingleTapUp(MotionEvent event) {
-        Toast.makeText(this, "onSingleTapUp ", Toast.LENGTH_SHORT).show();
+    public boolean onFling(MotionEvent motionEvent, MotionEvent motionEvent1, float v, float v1) {
+        try {
+            float diffY = motionEvent1.getY() - motionEvent.getY();
+            float diffX = motionEvent1.getX() - motionEvent.getX();
 
-        return true;
+            if (Math.abs(diffX) >Math.abs(diffY)){
+                if (Math.abs(diffX)> 100 && Math.abs(v)>100){
+                    if (diffX>0){
+                        View view1 = findViewById(R.id.view1);
+                        view1.setBackgroundResource(R.color.cardColor1_hover);
+                    }else {
+                        View view2 = findViewById(R.id.view2);
+                        view2.setBackgroundResource(R.color.cardColor1_defaul);
+                    }
+                }
+            }else{
+                if (diffY>0){
+                    View view3 = findViewById(R.id.view3);
+                    view3.setBackgroundResource(R.color.cardColor3_hover);
+                }else if(diffY<0){
+                    View view4 = findViewById(R.id.view4);
+                    view4.setBackgroundResource(R.color.cardColor2_defaul);
+                }
+            }
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+
+    @Override
+    public boolean onSingleTapConfirmed(MotionEvent motionEvent) {
+        return false;
     }
 
     @Override
-    public boolean onDoubleTap(MotionEvent event) {
-        Toast.makeText(this, "doble tap ", Toast.LENGTH_SHORT).show();
-        return true;
+    public boolean onDoubleTap(MotionEvent motionEvent) {
+        return false;
     }
 
     @Override
-    public boolean onDoubleTapEvent(MotionEvent event) {
-        Toast.makeText(this, "doble tap ", Toast.LENGTH_SHORT).show();
-
-        return true;
-    }
-
-    @Override
-    public boolean onSingleTapConfirmed(MotionEvent event) {
-        Toast.makeText(this, "un tap ", Toast.LENGTH_SHORT).show();
-
-        return true;
+    public boolean onDoubleTapEvent(MotionEvent motionEvent) {
+        return false;
     }
 }
 
